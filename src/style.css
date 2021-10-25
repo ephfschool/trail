@@ -1,0 +1,145 @@
+:root {
+  --background: #111;
+  --text: #fff;
+  --input: #333;
+  --dark-input: #2f2f2f;
+  --bar: #222;
+  --dark-bar: #161616;
+  --accent: #5a0;
+  --negative: #b03;
+}
+
+body {
+  background: var(--background);
+  overflow: hidden;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+input,
+button {
+  background: var(--input);
+  border-color: #0000;
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.5s;
+}
+
+button:active {
+  background: var(--accent) !important;
+  transition: 0.1s !important;
+}
+
+button:hover {
+  background: var(--dark-input) !important;
+}
+
+div#login * {
+  display: none;
+  margin: 10px;
+}
+
+div#new_account * {
+  display: none;
+  margin: 10px;
+}
+
+p.negative {
+  color: var(--negative);
+}
+
+div.center {
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+}
+
+div.center * {
+  position: relative;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div#groups_bar {
+  background: var(--bar);
+  padding: 10px;
+  width: 100vw;
+  height: 50px;
+}
+
+div#groups_bar button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+div#create_group * {
+  display: none;
+  margin: 10px;
+}
+
+div#input_bar {
+  width: 100vw;
+  height: 30px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background: var(--bar);
+}
+
+div#input_bar * {
+  background: var(--dark-bar);
+  border-radius: 20px;
+  display: none;
+}
+
+input#input_bar_text {
+  width: 300px;
+  position: absolute;
+  left: calc(50% - 200px);
+}
+
+button#input_bar_send {
+  width: 50px;
+  position: absolute;
+  left: calc(50% + 125px);
+}
+
+button#input_bar_invite {
+  position: absolute;
+  width: 30px;
+  left: 5px;
+}
+
+p.author {
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+
+p.message {
+  width: calc(100vw - 20px);
+  background: var(--dark-bar);
+  padding: 10px;
+  margin-top: 0px;
+  word-wrap: break-word;
+}
+
+div#messages {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  position: absolute;
+  left: 0px;
+  top: 80px;
+}
+
+div#invite * {
+  display: none;
+  margin: 10px;
+}
