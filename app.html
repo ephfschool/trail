@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="title">Groups</title>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@6.1.0/firebase.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div id="groups_bar"></div>
+    <div id="user_bar"></div>
+    <div id="messages"></div>
+    <div id="input_bar">
+      <button id="input_bar_invite">+</button>
+      <input id="input_bar_text" placeholder="Send a Message" />
+      <button id="input_bar_send">Send</button>
+    </div>
+
+    <div id="create_group" class="center">
+      <input id="create_group_name" placeholder="Group Name" />
+      <button id="create_group_submit">Create Group</button>
+    </div>
+
+    <div id="invite" class="center">
+      <input id="invite_search" placeholder="Search Username" />
+      <button id="invite_submit">Invite</button>
+      <p id="invite_error" class="negative"></p>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
