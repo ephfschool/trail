@@ -1,15 +1,12 @@
-import { launch, json } from "./jsonshare";
-import { storage } from "./storage";
+const { setJson, ready } = launch();
 
-const { setJson, firebase, ready } = launch();
-
-async function init() {
-  await firebase
-    .database()
-    .ref("json")
-    .push({ users: ["dummy"] });
-  await setJson("chats", ["dummy"]);
-}
+// async function init() {
+//   await firebase
+//     .database()
+//     .ref("json")
+//     .push({ users: ["dummy"] });
+//   await setJson("chats", ["dummy"]);
+// }
 
 // (async () => {
 //   localStorage.setItem("login", "{}");
@@ -70,7 +67,7 @@ function login(user) {
     }
     json.users.push({ username, password, groups: ["dummy"] });
     setJson("users", json.users);
-    console.log(json.users[json.users.length - 1]);
+    // console.log(json.users[json.users.length - 1]);
     login({ username, password });
   };
   document.getElementById("login_submit").onclick = () => {
