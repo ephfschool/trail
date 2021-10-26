@@ -1,12 +1,10 @@
-import init from "./log";
-
 var json = {};
 
 function launch(type) {
   if (!type) type = "json";
   let refKey;
   if (!firebase.apps.length) {
-    init();
+    log();
   }
   const database = firebase.database();
   const ref = database.ref(type);
@@ -72,19 +70,17 @@ function launch(type) {
       if (!eventKey) {
         await ref.push({
           id: ++lastEventId,
-          value: { type: eventType, value }
+          value: { type: eventType, value },
         });
       } else {
         await database.ref(`${type}/${eventKey}`).set({
           id: ++lastEventId,
           value: {
             type: eventType,
-            value
-          }
+            value,
+          },
         });
       }
-    }
+    },
   };
 }
-
-export { launch, json };
