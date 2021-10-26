@@ -1,10 +1,12 @@
+import init from "./log";
+
 var json = {};
 
-function launch(config, type) {
+function launch(type) {
   if (!type) type = "json";
   let refKey;
   if (!firebase.apps.length) {
-    firebase.initializeApp(config);
+    init();
   }
   const database = firebase.database();
   const ref = database.ref(type);
