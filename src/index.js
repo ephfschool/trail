@@ -41,7 +41,7 @@ function login(user) {
   storage.set("loginFileChange", user);
   storage.set("login", user);
   const a = document.createElement("a");
-  a.href = "/app.html";
+  a.href = "app.html";
   a.click();
 }
 
