@@ -1,11 +1,8 @@
-import { launch, json } from "./jsonshare";
-import { storage } from "./storage";
-
 const { setJson, ready, onEvent, createEvent } = launch();
 
 (async () => {
   await ready();
-  console.log(json);
+  // console.log(json);
   const userDetails = storage.get("loginFileChange");
   let userIndex;
   let groupIndex;
@@ -97,11 +94,11 @@ const { setJson, ready, onEvent, createEvent } = launch();
             messages: [
               {
                 author: "System",
-                text: "Welcome to your new server!"
-              }
-            ]
-          }
-        ]
+                text: "Welcome to your new server!",
+              },
+            ],
+          },
+        ],
       });
       const groupElement = document.createElement("button");
       let name = json.chats[json.chats.length - 1].name;
@@ -125,17 +122,17 @@ const { setJson, ready, onEvent, createEvent } = launch();
     if (text != "") {
       json.chats[groupIndex].channels[0].messages.push({
         author: json.users[userIndex].username,
-        text
+        text,
       });
       await setJson("chats", json.chats);
       createEvent("message", {
         group: groupIndex,
         author: json.users[userIndex].username,
-        text
+        text,
       });
       addMessage({
         author: json.users[userIndex].username,
-        text
+        text,
       });
     }
   };
