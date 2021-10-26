@@ -1,16 +1,7 @@
 import { launch, json } from "./jsonshare";
 import { storage } from "./storage";
 
-const { setJson, ready, onEvent, createEvent } = launch({
-  apiKey: "AIzaSyBB2Btfohf4iompHVa58ECDwSt8S5TWYUQ",
-  authDomain: "chat-fee82.firebaseapp.com",
-  projectId: "chat-fee82",
-  storageBucket: "chat-fee82.appspot.com",
-  messagingSenderId: "533331922027",
-  appId: "1:533331922027:web:e8a2a921b28749a38e352e",
-  measurementId: "G-X3NWR893EY",
-  databaseURL: "https://chat-fee82-default-rtdb.firebaseio.com/"
-});
+const { setJson, ready, onEvent, createEvent } = launch();
 
 (async () => {
   await ready();
