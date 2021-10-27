@@ -29,20 +29,25 @@ if (Object.keys(storage.get("login") ?? {}).length == 0) {
 function login(user) {
   if (user === null) {
     console.log("null user");
+    const login = document.getElementById("login");
+    Array.from(login.children).forEach((element) => {
+      element.style.display = "block";
+    });
+  } else {
+    const loginElement = document.getElementById("login");
+    Array.from(loginElement.children).forEach((element) => {
+      element.style.display = "none";
+    });
+    const newAccountElement = document.getElementById("new_account");
+    Array.from(newAccountElement.children).forEach((element) => {
+      element.style.display = "none";
+    });
+    storage.set("loginFileChange", user);
+    storage.set("login", user);
+    const a = document.createElement("a");
+    a.href = "app.html";
+    a.click();
   }
-  const loginElement = document.getElementById("login");
-  Array.from(loginElement.children).forEach((element) => {
-    element.style.display = "none";
-  });
-  const newAccountElement = document.getElementById("new_account");
-  Array.from(newAccountElement.children).forEach((element) => {
-    element.style.display = "none";
-  });
-  storage.set("loginFileChange", user);
-  storage.set("login", user);
-  const a = document.createElement("a");
-  a.href = "app.html";
-  a.click();
 }
 
 (async () => {
