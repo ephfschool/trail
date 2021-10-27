@@ -12,7 +12,11 @@ const { setJson, ready, onEvent, createEvent } = launch();
     }
   });
   if (!userIndex) {
-    throw "couldn't get user";
+    console.log("couldn't get user");
+    localStorage.setItem("login", "{}");
+    const a = document.createElement("a");
+    a.href = "index.html";
+    a.click();
   }
   if (!json.users[userIndex].groups) {
     json.users[userIndex].groups = ["dummy"];
