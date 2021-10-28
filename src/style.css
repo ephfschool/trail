@@ -1,12 +1,16 @@
 :root {
   --background: #111;
+  --shadow: #000a;
   --text: #fff;
   --input: #333;
   --dark-input: #2f2f2f;
   --bar: #222;
   --dark-bar: #161616;
-  --accent: #5a0;
+  --accent: #7d0;
+  --dark-accent: #343;
   --negative: #b03;
+  --dark-negative: #a02;
+  --background-negative: #211;
 }
 
 body {
@@ -24,18 +28,42 @@ button {
   background: var(--input);
   border-color: #0000;
   padding: 5px;
-  border-radius: 3px;
+  border-color: var(--text);
+  border: solid;
+  border-width: 1px;
+  border-radius: 10px;
   outline: none;
   transition: 0.5s;
-}
-
-button:active {
-  background: var(--accent) !important;
-  transition: 0.1s !important;
+  filter: drop-shadow(0 0 10px var(--shadow));
 }
 
 button:hover {
   background: var(--dark-input) !important;
+}
+
+input:hover {
+  background: var(--dark-input) !important;
+}
+
+button:active {
+  background: var(--dark-accent) !important;
+  transition: 0.1s !important;
+}
+
+input:focus {
+  background: var(--dark-accent) !important;
+  transition: 1s !important;
+}
+
+button.negative {
+  border: none;
+  padding: 6px;
+  filter: drop-shadow(0 0 10px var(--background-negative));
+  background: var(--negative);
+}
+
+button.negative:hover {
+  background: var(--dark-negative) !important;
 }
 
 div#login * {
@@ -50,6 +78,10 @@ div#new_account * {
 
 p.negative {
   color: var(--negative);
+  background: var(--background-negative);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 div.center {
@@ -71,6 +103,7 @@ div#groups_bar {
   padding: 10px;
   width: 100vw;
   height: 50px;
+  box-shadow: 0 0 10px var(--shadow);
 }
 
 div#groups_bar button {
@@ -78,6 +111,19 @@ div#groups_bar button {
   height: 50px;
   font-size: 20px;
   margin-right: 5px;
+}
+
+button#new_group {
+  border-color: var(--accent);
+  background-color: var(--input);
+  color: var(--accent);
+}
+
+button#settings {
+  border-color: var(--accent);
+  background-color: var(--accent);
+  color: var(--text);
+  margin-right: 8px !important;
 }
 
 div#create_group * {
@@ -122,6 +168,10 @@ p.author {
   font-size: 10px;
   margin-bottom: 3px;
 }
+p.author::before {
+  content: "• ";
+  color: var(--accent);
+}
 
 p.message {
   width: calc(100vw - 20px);
@@ -129,6 +179,10 @@ p.message {
   padding: 10px;
   margin-top: 0px;
   word-wrap: break-word;
+  border-style: inset solid;
+  border-color: #0000;
+  border-left-color: var(--accent);
+  box-shadow: 0 0 10px var(--shadow);
 }
 
 div#messages {
